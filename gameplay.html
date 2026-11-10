@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玩法 · 把身体当成一台可以改装的机器 | 赛博朋克 2077 档案</title>
+<meta name="description" content="《赛博朋克 2077》玩法拆解：五大属性与技能、2.0 重做的专长树、义体容量与代价、武器三型、快速破解与超梦，以及四种流派配点思路。">
+<meta name="theme-color" content="#060608">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23060608%22%2F%3E%3Cpath%20d%3D%22M3%2025V11l6-4%206%204v14%22%20fill%3D%22none%22%20stroke%3D%22%23FCEE0A%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M17%2025V9h9v6h-9%22%20fill%3D%22none%22%20stroke%3D%22%23FCEE0A%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M17%2015h9v10h-9%22%20fill%3D%22none%22%20stroke%3D%22%23FCEE0A%22%20stroke-width%3D%221.6%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2225%22%20width%3D%2223%22%20height%3D%222%22%20fill%3D%22%23FCEE0A%22%2F%3E%3Crect%20x%3D%2225%22%20y%3D%223%22%20width%3D%224%22%20height%3D%224%22%20fill%3D%22%23FF2E63%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;700;900&family=Share+Tech+Mono&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="index.html" aria-label="返回首页">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M3 25V11l6-4 6 4v14" fill="none" stroke="#FCEE0A" stroke-width="1.6"/>
+        <path d="M17 25V9h9v6h-9M17 15h9v10h-9" fill="none" stroke="#FCEE0A" stroke-width="1.6"/>
+        <rect x="3" y="25" width="23" height="2" fill="#FCEE0A"/>
+        <rect x="25" y="3" width="4" height="4" fill="#FF2E63"/>
+      </svg>
+      <span class="brand-txt"><b>NET ARCHIVE</b>夜之城 档案</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">首页</a>
+      <a href="world.html">世界观</a>
+      <a href="story.html">剧情</a>
+      <a href="gameplay.html" aria-current="page">玩法</a>
+      <a href="art.html">美术</a>
+      <a href="anime.html">动画</a>
+      <a href="awards.html">荣誉</a>
+      <a href="themes.html">主旨</a>
+    </nav>
+    <div class="topbar-meta"><i class="dot-live"></i>NIGHT CITY <span id="sys-clock">--:--</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-head">
+      <div class="eyebrow"><span class="sq"></span>SECTION 03 <span class="idx">/ GAMEPLAY</span></div>
+      <h1>你的身体，<span class="hl">是一份可以反复改写的配置单</span></h1>
+      <p class="lede">第一人称、开放世界、动作角色扮演——三个词都很普通，但组合起来的方向很明确：它不要求你上手很快，而是要求你想清楚自己要变成什么。2023 年的 2.0 更新几乎把这套系统重做了一遍。</p>
+      <div class="meta-row">
+        <span>第一人称 ARPG</span>
+        <span>属性 · 专长 · 义体</span>
+        <span>2.0 系统重做</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 属性 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <h2><span class="no">01</span>五条属性，五种活法</h2>
+      <p class="body-col muted" style="margin-bottom:26px">属性决定你能装上什么义体、能通过什么对话选项、能用什么武器。它不是单纯的力量值，而是一份<b>你打算怎么解决麻烦</b>的声明。</p>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <colgroup>
+            <col style="width:18%"><col style="width:42%"><col style="width:40%">
+          </colgroup>
+          <thead>
+            <tr><th>属性</th><th>直接影响</th><th>你会在哪些场景需要它</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>肉体</b><br><span class="sm">Body</span></td>
+              <td class="sm">生命值、耐力、近战伤害、负重与开门方式</td>
+              <td class="sm">徒手与钝器、破门、抓取敌人当盾牌；对话里那些“直接动手”的选项。</td>
+            </tr>
+            <tr>
+              <td><b>反应</b><br><span class="sm">Reflexes</span></td>
+              <td class="sm">暴击率、闪避、突进与空中机动</td>
+              <td class="sm">刀剑与手枪、跑酷式位移、时间减速类义体（斯安威斯坦）。</td>
+            </tr>
+            <tr>
+              <td><b>技术能力</b><br><span class="sm">Technical Ability</span></td>
+              <td class="sm">护甲、技术武器、拆解与制作</td>
+              <td class="sm">穿墙射击、开门与拆弹、升级武器到高阶；也是很多支线的“工程师解法”。</td>
+            </tr>
+            <tr>
+              <td><b>智力</b><br><span class="sm">Intelligence</span></td>
+              <td class="sm">快速破解伤害、RAM 容量、上传速度</td>
+              <td class="sm">纯黑客流；隔着一堵墙让整层楼的敌人互相开火。</td>
+            </tr>
+            <tr>
+              <td><b>冷静</b><br><span class="sm">Cool</span></td>
+              <td class="sm">潜行、暴击、商店价格与部分对话</td>
+              <td class="sm">消音武器、光学隐身、绕后击杀；也是遇到麻烦时最省事的一类选项。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small muted" style="margin-top:18px">2.0 之后技能被合并为五项：猎头、黑客、忍者、独狼、工程。它们不再受属性等级限制，每五级解锁一档被动，最高 60 级。</p>
+    </div>
+  </section>
+
+  <!-- ===== 专长 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <h2><span class="no">02</span>专长树：2.0 之后更少，但更狠</h2>
+      <div class="split">
+        <div class="body-col">
+          <p>1.6 时代的专长树问题很直接：点数多、节点碎、大部分是几个百分点的加成，加完之后你感觉不到自己变强了。2.0 把整棵树砍短，让每个节点都指向一种具体行为。</p>
+          <p>更关键的是“属性门槛解锁特殊能力”的设计：把某条属性堆到足够高，会解锁一个改变打法形态的技能，而不只是数值提升。</p>
+          <ul class="spec">
+            <li><span class="k">脑机超频</span><span class="v">智力线。RAM 见底时用生命值继续上传破解——黑客流从此有了“透支”的选项。</span></li>
+            <li><span class="k">爆能射击</span><span class="v">技术线。技术武器蓄力后打出穿透与爆炸，把拆墙工具变成主武器。</span></li>
+            <li><span class="k">方刚气血</span><span class="v">肉体线。把生命值上限转换成近战压制力，越打越硬。</span></li>
+          </ul>
+        </div>
+        <div class="panel cut">
+          <h3>为什么这次重做值得单独说</h3>
+          <p class="small muted">因为它改变了游戏对自己的定义。旧版本里你是在“堆数值”，新版本里你是在“选一种身份”：是靠义体硬扛的莽夫，还是靠代码让别人自相黑手的幽灵。这两者不再只是伤害数字的差别。</p>
+          <div class="hr" style="margin:20px 0"></div>
+          <p class="small muted">代价是：2.0 之前的存档会返还全部专长点，且提供一次属性重置——官方也建议直接开新档。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 义体 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <h2><span class="no">03</span>义体：变强，然后付账</h2>
+      <div class="split-wide">
+        <div class="body-col">
+          <p>义体是这套玩法的核心，也是这个世界观的核心。2.0 把护甲的主要来源从衣服改到了义体，于是“变强”这件事第一次和“改身体”绑死在了一起。</p>
+          <p>每个义体都要占<b>义体容量</b>。容量有上限，靠属性、专长和成长芯片往上加。所以配装不是“把最好的都装上”，而是决定你愿意放弃哪一半能力。</p>
+          <p>安装要去义体医生那里，坐在手术椅上，看你选的部件被真正装进去。这个动画看似只是沉浸感，实际在提醒你：这不是换装备，这是动手术。</p>
+          <p>设定里的代价叫<b>赛博精神病</b>——义体过量导致的人格崩解。游戏用“容量上限”做了机制上的呼应，用一连串支线做了叙事上的呼应：那些疯掉的人，多半是先被这座城市弄坏了别的地方。</p>
+        </div>
+        <div class="panel cut">
+          <h3>义体槽位一览</h3>
+          <ul class="spec" style="padding:0">
+            <li><span class="k">额叶</span><span class="v">破解与操控相关</span></li>
+            <li><span class="k">操作系统</span><span class="v">斯安威斯坦 / 赛博终端，决定你偏物理还是偏网络</span></li>
+            <li><span class="k">骨骼 / 表皮</span><span class="v">护甲与抗性</span></li>
+            <li><span class="k">手臂</span><span class="v">螳螂刀、猩猩臂、单分子线等武器化改造</span></li>
+            <li><span class="k">腿</span><span class="v">二段跳、空中冲刺</span></li>
+            <li><span class="k">神经系统</span><span class="v">时间减速、闪避与反应加成</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 战斗 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <h2><span class="no">04</span>枪、刀、车：三种打架方式</h2>
+      <div class="g3">
+        <div class="panel cut-sm">
+          <h3>武器三型</h3>
+          <p class="small muted"><b style="color:var(--yellow)">力量型</b> 可跳弹、可装配件最全；<b style="color:var(--yellow)">技术型</b> 蓄力后穿透墙体与掩体；<b style="color:var(--yellow)">智能型</b> 子弹自动追踪目标，但伤害被压得更低，需要专长补回来。</p>
+        </div>
+        <div class="panel cut-sm">
+          <h3>近战与刀剑</h3>
+          <p class="small muted">2.0 加大了近战的比重：耐力不再被跑动消耗，只被攻击消耗；加入了新的处决动作与热能武士刀。螳螂刀配上时间减速，是整部游戏最顺手的暴力。</p>
+        </div>
+        <div class="panel cut-sm">
+          <h3>载具战斗</h3>
+          <p class="small muted">2.0 新增：驾驶中可以用手枪、冲锋枪射击，部分车自带车载武器，摩托车可以近身劈砍。轮胎能被打爆。2.3 又补了 AutoDrive，让车自己把你送到目的地。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 黑客 / 超梦 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <h2><span class="no">05</span>两套“不用开枪”的系统</h2>
+      <div class="split">
+        <div>
+          <h3 style="color:var(--cyan);margin-bottom:14px">快速破解</h3>
+          <div class="body-col">
+            <p>隔着墙、隔着楼层，用 RAM 让敌人的义体过热、失明、短路，或者直接让他的枪炸膛。2.0 之后可以对同一个目标叠加多个破解，也可以对 NCPD 警员动手——后果自负。</p>
+            <p>最典型的用法不是击杀，而是<b>让敌人互相解决</b>：先用“传染”（contagion）类破解让一个人咳嗽，再让旁边的人把他当成威胁。</p>
+          </div>
+          <div class="tags" style="margin-top:16px">
+            <span class="tag">过热</span><span class="tag">短路</span><span class="tag">失明</span><span class="tag">自杀</span><span class="tag">系统重置</span><span class="tag on">脑机超频</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="color:var(--magenta);margin-bottom:14px">超梦</h3>
+          <div class="body-col">
+            <p>一段被录下来的感官体验，可以像剪辑素材一样拆开看。你在三个层里来回切换：画面、声音、热信号。很多任务的核心不是战斗，而是“在一段别人的记忆里找到他没说出口的东西”。</p>
+            <p>它同时是这个世界的隐喻：当体验可以被录制、复制、售卖，真实就成了一种需要额外付费的东西。</p>
+          </div>
+          <div class="tags" style="margin-top:16px">
+            <span class="tag">视觉层</span><span class="tag">音频层</span><span class="tag">热层</span><span class="tag">扫描</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 配点 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <h2><span class="no">06</span>四种流派，四条开局</h2>
+      <p class="body-col muted" style="margin-bottom:26px">下面不是“最优解”，而是四种能成立的身份。每一种都有自己的短板，选一种就意味着放弃另一种的便利。</p>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <colgroup>
+            <col style="width:18%"><col style="width:16%"><col style="width:33%"><col style="width:33%">
+          </colgroup>
+          <thead>
+            <tr><th>流派</th><th>主属性</th><th>核心义体</th><th>玩法要点</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>枪械</b></td>
+              <td class="sm">肉体 / 反应</td>
+              <td class="sm">骨骼强化、斯安威斯坦、皮下护甲</td>
+              <td class="sm">正面压制，靠时间减速抢节奏。适合第一次玩、不想研究系统的人。</td>
+            </tr>
+            <tr>
+              <td><b>黑客</b></td>
+              <td class="sm">智力</td>
+              <td class="sm">赛博终端、强化额叶、脑机超频</td>
+              <td class="sm">不开一枪清完一整层。前期最弱，中后期最强，也是最像“这个世界的人”的打法。</td>
+            </tr>
+            <tr>
+              <td><b>近战</b></td>
+              <td class="sm">肉体 / 反应</td>
+              <td class="sm">螳螂刀、肌腱强化、方刚气血</td>
+              <td class="sm">贴脸、处决、位移。对手柄和节奏感有要求，但观感最好。</td>
+            </tr>
+            <tr>
+              <td><b>潜行</b></td>
+              <td class="sm">冷静 / 技术</td>
+              <td class="sm">光学隐身、消音武器、二段跳</td>
+              <td class="sm">不触发警报完成任务，报酬更高。失败一次就得重来，耐心比手速重要。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="next-nav">
+        <div>
+          <span class="nn-k">NEXT / SECTION 04</span>
+          <span class="nn-t">美术：四种风格，一部阶级史</span>
+        </div>
+        <a href="art.html" class="tag on" style="padding:10px 16px">进入</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot">
+      <h5>声明</h5>
+      <p>本站为非官方、非营利的粉丝资料站，内容基于 CD PROJEKT RED 公开信息与媒体报道整理，用于介绍与评论。CYBERPUNK、CYBERPUNK 2077 及相关标识为 CD PROJEKT S.A. 的商标或注册商标。</p>
+    </div>
+    <div class="foot">
+      <h5>章节</h5>
+      <div class="foot-links">
+        <a href="art.html">美术设计</a>
+        <a href="anime.html">衍生动画</a>
+        <a href="awards.html">荣誉</a>
+        <a href="themes.html">主旨</a>
+      </div>
+    </div>
+    <div class="foot">
+      <h5>档案信息</h5>
+      <div class="foot-meta">
+        ARCHIVE CP-2077<br>
+        SECTION 03 / GAMEPLAY<br>
+        最后整理 2026.11
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
