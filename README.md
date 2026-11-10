@@ -2,6 +2,8 @@
 
 一个介绍《赛博朋克 2077》的中文静态网站。八个页面，纯 HTML + CSS + 少量原生 JS，无构建流程，可直接托管在 GitHub Pages。
 
+线上地址：<https://huahaituichaoshi.github.io/cyberpunk-2077-archive/>
+
 ## 页面
 
 | 文件 | 章节 | 内容 |
