@@ -799,6 +799,27 @@ footer {
 .next-nav a:hover .nn-t { color: var(--yellow); text-decoration: none; }
 
 /* 通用小工具 */
+.art-img {
+  margin: 0 0 22px;
+  border: 1px solid var(--line);
+  background: #0a0a0e;
+}
+.art-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+}
+.art-img figcaption {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  border-top: 1px solid var(--line-soft);
+}
+
 .hr { height: 1px; background: var(--line); border: 0; margin: 40px 0; }
 .stack > * + * { margin-top: 18px; }
 .center { text-align: center; }
