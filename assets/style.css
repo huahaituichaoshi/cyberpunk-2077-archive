@@ -824,3 +824,122 @@ footer {
 .stack > * + * { margin-top: 18px; }
 .center { text-align: center; }
 .nowrap { white-space: nowrap; }
+
+/* ============================================================
+   HUD 动态增强：赛博终端 / 登录界面质感
+   ============================================================ */
+
+/* 全站循环扫描线（由 main.js 注入） */
+.scanline {
+  position: fixed; left: 0; right: 0;
+  height: 140px;
+  z-index: 9997;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    transparent,
+    rgba(252, 238, 10, 0.035) 35%,
+    rgba(252, 238, 10, 0.075) 50%,
+    rgba(252, 238, 10, 0.035) 65%,
+    transparent);
+  animation: scan-move 10s linear infinite;
+  mix-blend-mode: screen;
+}
+@keyframes scan-move {
+  from { top: -140px; }
+  to   { top: 100vh; }
+}
+
+/* 面板 hover 霓虹边框 */
+.panel {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.panel:hover {
+  border-color: rgba(252, 238, 10, 0.38);
+  box-shadow: 0 0 0 1px rgba(252, 238, 10, 0.12), 0 0 26px rgba(252, 238, 10, 0.08);
+}
+.panel::after {
+  content: "";
+  position: absolute; bottom: 12px; right: 14px;
+  width: 6px; height: 6px;
+  background: var(--dim);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.panel:hover::after {
+  background: var(--yellow);
+  box-shadow: 0 0 8px var(--yellow);
+}
+
+/* 卡片 hover 上浮 + 发光 */
+.card {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.card:hover {
+  border-color: rgba(252, 238, 10, 0.6);
+  box-shadow: 0 0 0 1px rgba(252, 238, 10, 0.18), 0 0 30px rgba(252, 238, 10, 0.12);
+  transform: translateY(-2px);
+}
+
+/* LIVE 灯呼吸 */
+.dot-live {
+  animation: dot-blink 1.6s ease-in-out infinite;
+}
+@keyframes dot-blink {
+  0%, 100% { opacity: 1;    box-shadow: 0 0 8px var(--magenta); }
+  50%      { opacity: 0.3;  box-shadow: 0 0 2px var(--magenta); }
+}
+
+/* boot 日志末尾闪烁光标 */
+.boot::after {
+  content: "▊";
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--cyan);
+  animation: cursor-blink 1.05s steps(1) infinite;
+}
+@keyframes cursor-blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* hero 光晕呼吸 */
+.hero-glow {
+  animation: glow-breathe 6.5s ease-in-out infinite;
+}
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.85; transform: translateX(-50%) scale(1); }
+  50%      { opacity: 1;    transform: translateX(-50%) scale(1.035); }
+}
+
+/* 关键数字微光 */
+.stat .v {
+  animation: stat-glow 3.8s ease-in-out infinite;
+}
+@keyframes stat-glow {
+  0%, 100% { text-shadow: 0 0 0 rgba(252, 238, 10, 0); }
+  50%      { text-shadow: 0 0 16px rgba(252, 238, 10, 0.35); }
+}
+
+/* 按钮 tag 可点击感 */
+.tag.on {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.tag.on:hover {
+  box-shadow: 0 0 18px rgba(252, 238, 10, 0.45);
+  transform: translateY(-1px);
+}
+
+/* 三角锯齿装饰条（可选，用在 section 之间） */
+.tri-strip {
+  height: 10px;
+  background: repeating-linear-gradient(45deg,
+    var(--yellow) 0 8px, transparent 8px 16px);
+  opacity: 0.22;
+}
+
+/* 减少动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .scanline, .dot-live, .boot::after, .hero-glow, .stat .v {
+    animation: none !important;
+  }
+  .boot::after { opacity: 1; }
+}

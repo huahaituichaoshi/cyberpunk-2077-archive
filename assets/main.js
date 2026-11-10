@@ -40,4 +40,12 @@
     tick();
     setInterval(tick, 30000);
   }
+
+  // 全站循环扫描线（HUD 动态感）
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var scan = document.createElement("div");
+    scan.className = "scanline";
+    scan.setAttribute("aria-hidden", "true");
+    document.body.insertBefore(scan, document.body.firstChild);
+  }
 })();
