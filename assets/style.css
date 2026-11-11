@@ -1057,6 +1057,154 @@ h1 .hl { color: var(--cyan); }
 .art-img.small img {
   aspect-ratio: 16 / 9;
 }
+
+/* ============================================================
+   HUD 风格增强：参考 2077 游戏内手机界面
+   ============================================================ */
+
+/* 更锐利的切角面板：加大切角尺寸 */
+.panel {
+  position: relative;
+  border: 1px solid rgba(18, 231, 226, 0.12);
+}
+.panel::before {
+  /* 面板顶部黄条保留，但加细青色边线 */
+  background: linear-gradient(90deg, var(--yellow) 0%, var(--yellow) 60%, transparent 60%);
+}
+
+/* 面板四角装饰括号 */
+.panel::after {
+  /* 已有的顶部发光线，保留 */
+}
+
+/* 表格切角更锋利 */
+.tbl-wrap {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+
+/* 按钮切角 */
+.tag {
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+.tag.on {
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+/* 侧边竖排标注：页面左右边缘的装饰文字 */
+.hud-side {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: rgba(18, 231, 226, 0.25);
+  pointer-events: none;
+  z-index: 1;
+  text-transform: uppercase;
+}
+.hud-side.left { left: 8px; }
+.hud-side.right { right: 8px; }
+
+/* 角落编号标记 */
+.hud-corner {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(18, 231, 226, 0.4);
+  letter-spacing: 0.1em;
+}
+
+/* 装饰性三角分隔线 */
+.hud-triangle {
+  height: 8px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--cyan) 10%,
+    var(--cyan) 90%,
+    transparent 100%);
+  clip-path: polygon(0 50%, 3% 0, 6% 50%, 9% 100%, 12% 50%, 15% 0, 18% 50%, 21% 100%, 24% 50%, 27% 0, 30% 50%, 33% 100%, 36% 50%, 39% 0, 42% 50%, 45% 100%, 48% 50%, 51% 0, 54% 50%, 57% 100%, 60% 50%, 63% 0, 66% 50%, 69% 100%, 72% 50%, 75% 0, 78% 50%, 81% 100%, 84% 50%, 87% 0, 90% 50%, 93% 100%, 96% 50%, 100% 50%);
+  opacity: 0.3;
+  margin: 16px 0;
+}
+
+/* RAM 槽位装饰 */
+.hud-ram {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.hud-ram span {
+  width: 10px;
+  height: 16px;
+  background: rgba(18, 231, 226, 0.2);
+  border: 1px solid rgba(18, 231, 226, 0.3);
+}
+.hud-ram span.on {
+  background: var(--cyan);
+  box-shadow: 0 0 6px rgba(18, 231, 226, 0.5);
+}
+.hud-ram span.used {
+  background: rgba(255, 46, 99, 0.3);
+  border-color: rgba(255, 46, 99, 0.4);
+}
+
+/* 状态色条：安全/公共/受限/危险 */
+.hud-status-bar {
+  display: flex;
+  height: 6px;
+  gap: 2px;
+  margin: 12px 0;
+}
+.hud-status-bar span {
+  flex: 1;
+}
+.hud-status-bar .s-safe { background: var(--cyan); }
+.hud-status-bar .s-public { background: rgba(18, 231, 226, 0.4); }
+.hud-status-bar .s-restricted { background: var(--yellow); }
+.hud-status-bar .s-danger { background: var(--magenta); }
+
+/* 顶部状态栏增强：更像游戏 HUD */
+.topbar {
+  border-bottom: 1px solid rgba(18, 231, 226, 0.15);
+}
+.topbar-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+/* hero 区加装饰边框 */
+.hero {
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 20px; left: 20px; right: 20px; bottom: 20px;
+  border: 1px solid rgba(18, 231, 226, 0.08);
+  pointer-events: none;
+  clip-path: polygon(0 0, 20px 0, 20px 4px, 4px 4px, 4px 20px, 0 20px, 0 0, 100% 0, 100% 20px, calc(100% - 4px) 20px, calc(100% - 4px) 4px, calc(100% - 20px) 4px, calc(100% - 20px) 0, 100% 0, 100% 100%, calc(100% - 20px) 100%, calc(100% - 20px) calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) calc(100% - 20px), 100% calc(100% - 20px), 100% 100%, 0 100%, 0 calc(100% - 20px), 4px calc(100% - 20px), 4px calc(100% - 4px), 20px calc(100% - 4px), 20px 100%, 0 100%);
+}
+
+/* 页面标题区加 HUD 质感 */
+.page-head {
+  position: relative;
+}
+.page-head .eyebrow {
+  font-family: var(--mono);
+}
+
+/* 数字 stat 加 RAM 槽视觉 */
+.stat-grid {
+  position: relative;
+}
+
+/* 减少动效 */
+@media (prefers-reduced-motion: reduce) {
+  .hud-triangle, .hud-ram span.on { animation: none !important; }
+}
 .art-img.two-col {
   max-width: 560px;
 }
