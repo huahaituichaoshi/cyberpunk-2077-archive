@@ -7,8 +7,7 @@
 <meta name="description" content="《赛博朋克 2077》中文资料站：夜之城的世界观与历史、主线剧情与结局分支、义体与黑客的玩法系统、四种建筑风格的视觉谱系、《边缘行者》动画、获奖与销量数据，以及游戏真正在讨论的那些问题。">
 <meta name="theme-color" content="#060608">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23060608%22%2F%3E%3Cpath%20d%3D%22M3%2025V11l6-4%206%204v14%22%20fill%3D%22none%22%20stroke%3D%22%2312E7E2%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M17%2025V9h9v6h-9%22%20fill%3D%22none%22%20stroke%3D%22%2312E7E2%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M17%2015h9v10h-9%22%20fill%3D%22none%22%20stroke%3D%22%2312E7E2%22%20stroke-width%3D%221.6%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2225%22%20width%3D%2223%22%20height%3D%222%22%20fill%3D%22%2312E7E2%22%2F%3E%3Crect%20x%3D%2225%22%20y%3D%223%22%20width%3D%224%22%20height%3D%224%22%20fill%3D%22%23FF2E63%22%2F%3E%3C%2Fsvg%3E">
-<link rel="preconnect" href="https://miaoda.feishu.cn">
-<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;700;900&family=Share+Tech+Mono&display=swap">
+<link rel="preload" href="assets/fonts/chakra-petch-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -20,6 +19,8 @@
   <div class="splash-sub">WELCOME TO NIGHT CITY</div>
   <div class="splash-line"></div>
 </div>
+
+<a class="skip-link" href="#main">跳到正文</a>
 
 <header class="topbar">
   <div class="topbar-in">
@@ -46,7 +47,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- ===== HERO ===== -->
   <section class="hero">
@@ -141,20 +142,16 @@
       <div class="boot" aria-label="档案状态">
         <span>&gt; link --archive night-city <b class="ok">[established]</b></span>
         <span>&gt; source: CD PROJEKT RED / 夜之城 2077</span>
-        <span>&gt; 8 个章节已解密　·　阅读顺序不限</span>
+        <span>&gt; 7 个章节已解密　·　阅读顺序不限</span>
       </div>
 
-      <div style="display:flex;align-items:center;gap:16px;margin-top:18px;flex-wrap:wrap">
-        <div class="hud-ram" aria-label="RAM 状态">
+      <div class="hud-row" aria-label="RAM 状态：73 / 120">
+        <div class="hud-ram">
           <span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span>
           <span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span>
           <span class="used"></span><span class="used"></span><span class="used"></span><span class="used"></span>
         </div>
-        <span style="font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:0.15em">RAM 73/120</span>
-      </div>
-
-      <div class="hud-status-bar" style="max-width:280px;margin-top:14px">
-        <span class="s-safe"></span><span class="s-public"></span><span class="s-restricted"></span><span class="s-danger"></span>
+        <span class="hud-k">RAM 73 / 120</span>
       </div>
 
       <div class="hero-foot">
@@ -225,11 +222,12 @@
           <p class="c-desc">换到什么程度就不算人了？被复制出来的意识还是你吗？自由为什么总要标价。</p>
           <span class="c-foot">四个问题</span>
         </a>
-        <div class="card" style="background:#08080b;border-style:dashed;justify-content:center;opacity:.75">
-          <span class="c-no">INDEX</span>
-          <span class="c-title" style="font-size:16px;color:var(--mut)">本档案为非官方资料站</span>
-          <p class="c-desc">所有内容基于公开资料整理，商标与版权归 CD PROJEKT S.A. 所有。</p>
-        </div>
+        <a class="card card-start" href="world.html">
+          <span class="c-no">START HERE</span>
+          <span class="c-title">从第一章开始读</span>
+          <p class="c-desc">七个章节由浅入深。从这座城市怎么长出来讲起，前两章不含主线剧透。</p>
+          <span class="c-foot">进入 · SECTION 01 →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -256,7 +254,7 @@
           <span class="k">衍生动画 · 各 10 集</span>
         </div>
       </div>
-      <p class="small muted" style="margin-top:18px">销量与评分为公开数据；首发时的 PS4 / Xbox One 版本 Metacritic 仅 57 分，与 PC 版差距极大，这一点在「荣誉」章节会详细展开。</p>
+      <p class="small muted stat-note">销量与评分为公开数据；首发时的 PS4 / Xbox One 版本 Metacritic 仅 57 分，与 PC 版差距极大，这一点在「荣誉」章节会详细展开。</p>
     </div>
   </section>
 
@@ -273,16 +271,14 @@
       </div>
       <div class="panel cut">
         <h3>一条阅读提示</h3>
-        <p class="small muted">这座城市的叙事默认你会死。无论你把自己改造成什么样子，结局都不会给你一个干净利落的“赢了”。这不是设计缺陷，而是它想要表达的东西本身。</p>
-        <div class="hr" style="margin:22px 0"></div>
-        <div class="spec">
-          <ul class="spec" style="padding:0">
-            <li><span class="k">原名</span><span class="v">Cyberpunk 2077</span></li>
-            <li><span class="k">开发</span><span class="v">CD PROJEKT RED</span></li>
-            <li><span class="k">原作</span><span class="v">Mike Pondsmith《Cyberpunk 2020》</span></li>
-            <li><span class="k">类型</span><span class="v">开放世界 · 动作角色扮演</span></li>
-          </ul>
-        </div>
+        <p class="small muted">这座城市的叙事默认你会死。无论你把自己改造成什么样子，结局都不会给你一个干净利落的「赢了」。这不是设计缺陷，而是它想要表达的东西本身。</p>
+        <hr class="hr hr-panel">
+        <ul class="spec">
+          <li><span class="k">原名</span><span class="v">Cyberpunk 2077</span></li>
+          <li><span class="k">开发</span><span class="v">CD PROJEKT RED</span></li>
+          <li><span class="k">原作</span><span class="v">Mike Pondsmith《Cyberpunk 2020》</span></li>
+          <li><span class="k">类型</span><span class="v">开放世界 · 动作角色扮演</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -295,7 +291,7 @@
           <span class="nn-k">NEXT / SECTION 01</span>
           <span class="nn-t">世界观：这座城市是怎么长出来的</span>
         </div>
-        <a href="world.html" class="tag on" style="padding:10px 16px">进入</a>
+        <a href="world.html" class="tag on">进入 SECTION 01 →</a>
       </div>
     </div>
   </section>

@@ -7,10 +7,21 @@
 <meta name="description" content="《赛博朋克：边缘行者》第一季与第二季的故事、角色、主创、评价对照：十集如何在 2022 年把游戏口碑拉回来，2026 年的新一季又换掉了什么。">
 <meta name="theme-color" content="#060608">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23060608%22%2F%3E%3Cpath%20d%3D%22M3%2025V11l6-4%206%204v14%22%20fill%3D%22none%22%20stroke%3D%22%2312E7E2%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M17%2025V9h9v6h-9%22%20fill%3D%22none%22%20stroke%3D%22%2312E7E2%22%20stroke-width%3D%221.6%22%2F%3E%3Cpath%20d%3D%22M17%2015h9v10h-9%22%20fill%3D%22none%22%20stroke%3D%22%2312E7E2%22%20stroke-width%3D%221.6%22%2F%3E%3Crect%20x%3D%223%22%20y%3D%2225%22%20width%3D%2223%22%20height%3D%222%22%20fill%3D%22%2312E7E2%22%2F%3E%3Crect%20x%3D%2225%22%20y%3D%223%22%20width%3D%224%22%20height%3D%224%22%20fill%3D%22%23FF2E63%22%2F%3E%3C%2Fsvg%3E">
-<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;700;900&family=Share+Tech+Mono&display=swap">
+<link rel="preload" href="assets/fonts/chakra-petch-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+<!-- 进入本页时的全屏封面：图片加载成功后显示，随后淡出 -->
+<div class="cover-intro" id="coverIntro" aria-hidden="true">
+  <img class="cover-intro-img" src="assets/img/anime-cover.jpg" alt="">
+  <div class="cover-intro-hud">
+    <span class="ci-k">EDGERUNNERS · ARCHIVE ENTRY</span>
+    <button class="ci-skip" type="button">跳过</button>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">跳到正文</a>
 
 <header class="topbar">
   <div class="topbar-in">
@@ -37,7 +48,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap">
     <div class="page-head">
       <div class="eyebrow"><span class="sq"></span>SECTION 05 <span class="idx">/ ANIME</span></div>
@@ -76,21 +87,21 @@
         </div>
       </div>
       <figure class="art-img" style="margin:34px auto 0; max-width:760px">
-        <img src="assets/img/anime-crew-back.jpg" alt="边缘行者小队背影：从左到右丽贝卡、露西、大卫、缅因等站在夜之城街头">
+        <img loading="lazy" decoding="async" src="assets/img/anime-crew-back.jpg" alt="边缘行者小队背影：从左到右丽贝卡、露西、大卫、缅因等站在夜之城街头">
         <figcaption>那群同样没有退路的人，凑成了一个勉强能叫做家的东西</figcaption>
       </figure>
       <div class="g2" style="margin-top:18px">
         <figure class="art-img">
-          <img src="assets/img/anime-lucy-david-fly.jpg" alt="露西和大卫在发光的广告牌前飞行">
+          <img loading="lazy" decoding="async" src="assets/img/anime-lucy-david-fly.jpg" alt="露西和大卫在发光的广告牌前飞行">
           <figcaption>他把别人的梦想当成自己的，也把她的月球当成自己的</figcaption>
         </figure>
         <figure class="art-img">
-          <img src="assets/img/anime-moon-embrace.jpg" alt="露西和大卫在巨大的月亮前拥抱">
+          <img loading="lazy" decoding="async" src="assets/img/anime-moon-embrace.jpg" alt="露西和大卫在巨大的月亮前拥抱">
           <figcaption>结局没有反转：露西最后一个人去了月球——那是大卫答应过她、却从没兑现的事</figcaption>
         </figure>
       </div>
       <figure class="art-img small" style="margin-top:22px">
-        <img src="assets/img/memorial-gloria.jpg" alt="格洛丽亚·马丁内斯的青色玫瑰全息投影">
+        <img loading="lazy" decoding="async" src="assets/img/memorial-gloria.jpg" alt="格洛丽亚·马丁内斯的青色玫瑰全息投影">
         <figcaption>格洛丽亚·马丁内斯：你没说错，大卫他呀，真的登上了荒坂塔顶</figcaption>
       </figure>
     </div>

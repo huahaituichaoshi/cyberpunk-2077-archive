@@ -31,8 +31,9 @@
 ├── themes.html
 └── assets/
     ├── style.css     # 全站视觉系统
-    ├── main.js       # 导航高亮 + 系统时钟
-    └── favicon.svg
+    ├── main.js       # 导航高亮 + 系统时钟 + 开场动画
+    ├── favicon.svg
+    └── fonts/        # 自托管拉丁子集（Chakra Petch / Share Tech Mono）
 ```
 
 ## 本地预览
@@ -47,9 +48,9 @@ python -m http.server 8000
 
 ## 设计
 
-- 配色取自 IP 自身：近黑 `#060608` + 夜之城黄 `#FCEE0A`，青色 `#12E7E2` 与品红 `#FF2E63` 只用于分色偏移与警报感。
-- 面板用 `clip-path` 切角，全站覆盖 SVG 噪点与扫描线；标题用 Chakra Petch，正文用 Noto Sans SC，标签用 Share Tech Mono。
-- 字体通过自托管镜像加载，不直连 Google Fonts。
+- 配色以夜之城黄 `#FCEE0A` 为主，终端青 `#12E7E2` 留给 HUD 与数据，警报红 `#FF2E63` 只用于危险与争议标注；底色近黑 `#060608`。
+- 面板用 `clip-path` 切角，全站覆盖 SVG 噪点与扫描线；标题用 Chakra Petch，正文用系统中文栈，标签用 Share Tech Mono。
+- 字体全部自托管在 `assets/fonts/`，只取拉丁子集，合计约 43KB，不请求任何第三方字体服务；中文使用系统字体（PingFang SC / 微软雅黑等），因此 700 字重是真正的粗体，而不是浏览器伪粗。
 
 ## 声明
 
